@@ -575,6 +575,7 @@ This method has the advantage of allowing indenting. Note that no comma in the a
 ## Installing using Pip and easy_install
 
 `C:\> C:\python27\scripts\pip install <packagename>`
+`C:\> pip install C:/some-dir/some-file.whl`
 
 `C:\> C:\python27\scripts\easy_install <packagename>`
 
