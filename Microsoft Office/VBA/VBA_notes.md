@@ -143,6 +143,30 @@ End Sub
 ```
 Application.Wait (Now + TimeValue("00:00:03"))
 ```
+# Data import
+
+## From Text
+
+If you record a data import *From Text* the resulting *Query Table* will have a TextFileColumnDataTypes property set within the `with` statement. This will be an array of integers, as follows:
+```
+.TextFileColumnDataTypes = Array(4,2,1)
+```
+These integers are derived from the data type names as follows:
+
+Data type name | Data type value
+---------------|----------------
+General        |              1
+Text           |              2
+Date MDY       |              3
+Date DMY       |              4
+Date YMD       |              5
+Date MYD       |              6
+Date DYM       |              7
+Date YDM       |              8
+Skip           |              9
+
+It is worth noting that this does not result in errors in the event that a *Date* data type is applied to a column that does not contain date values.
+
 # Miscellaneous
 ## Running in the background
 A VBA procedure will take focus until it's complete, with the exception of displaying a modeless user form, input box, or some other method of queuing user interaction. But those are all initiated by a VBA procedure, and it will continue once they're answered/dismissed.
