@@ -27,20 +27,35 @@ Using the OS module:
 import os
 os._exit(errorcode)
 ```
-Using the sys modul:
+Using the sys module:
 ```Python
 import sys
 sys.exit()
+sys.exit(1) # with a return code
 ```
 Raising a system exit error:
 ```Python
 raise SystemExit
+raise SystemExit(1) # with a return code
 ```
-Using the in-built quit function:
+Using the in-built `quit` and `exit` functions:
 ```Python
 quit()
+exit()
 ```
 
+The `quit` and `exit` functions are not intended to be used outside of the interpreter. In production code, `sys.exit()` or `raise SystemExit` should be used.
+As a program may be running your program as a process, the return code may be important to the flow of the calling program. The return code defaults to zero (i.e. success).
+
+Note that `quit`, `exit`, `sys.exit()` and `raise SystemExit` all raise the `SystemExit` exception, which can be captured by an `except` block (particularly a nefarious unqualified `except`).
+
+`os._exit` does not work the same way as the other methods noted above, and should only be used in special circumstances.
+
+Sources:
+http://stackoverflow.com/questions/19747371/python-exit-commands-why-so-many-and-when-should-each-be-used
+http://stackoverflow.com/questions/17312176/sys-exit-is-there-a-less-extreme-alternative
+https://docs.python.org/2/howto/doanddont.html
+https://docs.python.org/2/library/constants.html
 
 # Procedures
 ## Variable length argument lists
