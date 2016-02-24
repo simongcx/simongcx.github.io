@@ -167,6 +167,14 @@ Skip           |              9
 
 It is worth noting that this does not result in errors in the event that a *Date* data type is applied to a column that does not contain date values.
 
+# Thoughts on VBA distribution
+* Microsoft Office would benefit from some kind of package manager or app store where users can sell (or make freely available) addins for Microsoft Office products. The benefits of such a system would be:
+	* A single place for users to obtain additional functionality
+	* A distribution channel for addins
+	* Additional confidence for users in installing addins (on the presumption that the app store undertook some malware scanning)
+	* Easy setup of the users environment (ideally a single-click deploy of all add-on previously used to a fresh Office install)
+* The absence of a package manager means that each Office document with VBA ends up including all the code it needs to run, rather than *requiring* other modules which are then auto-installed by the package manager
+
 # Miscellaneous
 ## Running in the background
 A VBA procedure will take focus until it's complete, with the exception of displaying a modeless user form, input box, or some other method of queuing user interaction. But those are all initiated by a VBA procedure, and it will continue once they're answered/dismissed.
