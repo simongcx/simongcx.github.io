@@ -32,16 +32,22 @@ Using the sys module:
 import sys
 sys.exit()
 sys.exit(1) # with a return code
+sys.exit('Error message') # with a message, return code will be 1
 ```
 Raising a system exit error:
 ```Python
 raise SystemExit
 raise SystemExit(1) # with a return code
+raise SystemExit('Error message') # with a message, return code will be 1
 ```
 Using the in-built `quit` and `exit` functions:
 ```Python
 quit()
+quit(1) # with a return code
+quit('Error message') # with a message, return code will be 1
 exit()
+exit(1) # with a return code
+exit('Error message') # with a message, return code will be 1
 ```
 
 The `quit` and `exit` functions are not intended to be used outside of the interpreter. In production code, `sys.exit()` or `raise SystemExit` should be used.
