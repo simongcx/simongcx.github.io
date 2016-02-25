@@ -1,25 +1,25 @@
 # Functions and Subroutines
 ## Use of parentheses
 The use of `Call` statement is optional when you wish to call a subroutine or function. The purpose of the Call statement when used with a Sub is to allow you to enclose the argument list in parentheses. However, if a subroutine does not pass any arguments, then you still should not use parentheses when calling a Sub using the `Call` statement.
-```
+```vbnet
 Call MySubroutine
 ```
 If a subroutine has arguments, you must use parentheses when using the `Call` statement. If there is more than one argument, you must separate the arguments with commas.
-```
+```vbnet
 Call MySubroutine(intUsageFee, intTimeInHours, "StringLiteral")
 ```
 However, if you omit the `Call` statement you cannot use parentheses. Instead the name of the subroutine is followed by the parameters separated by spaces.
-```
+```vbnet
 MySubroutine intUsageFee, intTimeInHours, "StringLiteral"
 ```
 If you want a returned value, you can assign the function to a variable. Note that if there is one or more arguments, you must use the parentheses.
-```vbscript
-returnval = MyFunction
-returnval = MyFunction()
-returnval = MyFunction(intUsageFee, intTimeInHours, "StringLiteral")
+```vbnet
+returnval = MyFunc
+returnval = MyFunc()
+returnval = MyFunc(intUsageFee, intTimeInHours, "StringLiteral")
 ```
 If a procedure (function or sub) is called with arguments, and the call is on a line with other statements or keywords, the arguments must be enclosed in parentheses. This to distinguish the arguments belonging to the procedure call from the rest of the line. So:
-```vbscript
+```vbnet
 If CheckConditions(A, B, C) = DONT_PROCEED Then
 	Exit Sub
 End If
@@ -28,47 +28,47 @@ End If
 # Referencing ranges
 ## Referencing cells not in the activesheet
 These work:
-```
+```vbnet
 myrange = Worksheets("Sheet1").Range("B1:B10")
 myrange = Range(Cells(1, 2), Cells(10, 2))
 ```
 But this doesn’t:
-```
+```vbnet
 myrange = Worksheets("Sheet1").Range(Cells(1, 2), Cells(10, 2))
 ```
 The reason is that Cells defaults to being of the active worksheet. Hence the following works:
-```
+```vbnet
 myrange = Worksheets("Sheet1").Range(Worksheets("Sheet1").Cells(1, 2), Worksheets("Sheet1").Cells(10, 2))
 ```
 Source: http://stackoverflow.com/questions/28170078/how-do-i-refer-to-a-range-in-another-worksheet-in-my-code
 ##Switching between addresses and row/column numbers
 Getting the address of a single cell specified by row/column numbers:
-```
+```vbnet
 MsgBox Cells(1, 1).Address(RowAbsolute:=False, ColumnAbsolute:=False)
 ```
 Getting the address of a range of multiple cells specified by row/column numbers:
-```
+```vbnet
 MsgBox Range(Cells(1, 1), Cells(2, 2)).Address(RowAbsolute:=False, ColumnAbsolute:=False)
 ```
 Getting the row and column numbers from an address:
-```
+```vbnet
 MsgBox Range("A1").Row & ", " & Range("A1").Column
 ```
 ## Selecting a range based on Cells
 This doesn’t work:
-```
+```vbnet
 Dim testrange As Range
 Set testrange = ActiveSheet.Range(Cells(1, 1))
 ```
 But this does:
-```
+```vbnet
 Dim testrange As Range
 Set testrange = ActiveSheet.Range(Cells(1, 1),Cells(1,1))
 ```
 # The Range Object
 ## Getting a cell by index
 An alternative to iterating through a range is to access specific cells by reference. The references are left to right, then top to bottom.
-```
+```vbnet
 Dim myRange As Range
 Set myRange = Range("A1:B2")
 Debug.Print myRange(1).Value
@@ -77,14 +77,14 @@ Debug.Print myRange(3).Value
 Debug.Print myRange(4).Value
 ```
 ## Getting the number of cells in a range
-```
+```vbnet
 Dim myRange As Range
 Set myRange = Range("A1:B2")
 Debug.Print myRange.Count
 ```
 ## Looping through a range object by index
 Use the Count property of the range object.
-```
+```vbnet
 Function concat(rng As Range)
 concat = ""
 For i = 1 To rng.Count
@@ -95,7 +95,7 @@ End Function
 
 # Dealing with the file system
 ## Getting specific folders
-```
+```vbnet
 Debug.Print "Desktop:", CreateObject("WScript.Shell").specialfolders("Desktop")
 Debug.Print "AppData:", Environ("AppData")
 Debug.Print "UserProfile:", Environ("USERPROFILE")
@@ -129,7 +129,7 @@ https://msdn.microsoft.com/en-us/library/office/ff861787.aspx
 # Scheduled Execution
 ## Application.OnTime event
 Example
-```
+```vbnet
 Private Sub Say_Good_Morning()
     MsgBox "Automatic Scheduled Event: Good Morning"
 End Sub
@@ -140,7 +140,7 @@ Private Sub Add_Schedule()
 End Sub
 ```
 # Application.Wait event
-```
+```vbnet
 Application.Wait (Now + TimeValue("00:00:03"))
 ```
 # Data import
@@ -148,7 +148,7 @@ Application.Wait (Now + TimeValue("00:00:03"))
 ## From Text
 
 If you record a data import *From Text* the resulting *Query Table* will have a TextFileColumnDataTypes property set within the `with` statement. This will be an array of integers, as follows:
-```
+```vbnet
 .TextFileColumnDataTypes = Array(4,2,1)
 ```
 These integers are derived from the data type names as follows:
