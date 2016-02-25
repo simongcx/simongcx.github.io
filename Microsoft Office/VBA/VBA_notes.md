@@ -13,13 +13,13 @@ However, if you omit the `Call` statement you cannot use parentheses. Instead th
 MySubroutine intUsageFee, intTimeInHours, "StringLiteral"
 ```
 If you want a returned value, you can assign the function to a variable. Note that if there is one or more arguments, you must use the parentheses.
-```
+```vbscript
 returnval = MyFunction
 returnval = MyFunction()
 returnval = MyFunction(intUsageFee, intTimeInHours, "StringLiteral")
 ```
 If a procedure (function or sub) is called with arguments, and the call is on a line with other statements or keywords, the arguments must be enclosed in parentheses. This to distinguish the arguments belonging to the procedure call from the rest of the line. So:
-```
+```vbscript
 If CheckConditions(A, B, C) = DONT_PROCEED Then
 	Exit Sub
 End If
