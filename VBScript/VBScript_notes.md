@@ -17,4 +17,9 @@ The script will be run by the default script host.
 Just type the name of the script (extension optional). This will run the script with the default script host.
 Alternatively, type cscript or wscript and then the script name (extension required).
 
+# IDEs / Tools
 
+* Notepad++ <https://notepad-plus-plus.org/>
+* VbsEdit (intrusive nags) <http://www.vbsedit.com/>
+* H-two-O (compiler) <https://sourceforge.net/projects/htwoo/files/htwoo-version-3/>
+* SciTE <http://www.scintilla.org/SciTE.html>
