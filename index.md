@@ -5,6 +5,7 @@ I am using this User repository to store my notes.
 * I want to take notes as I learn things
 * I want to be able to access those notes wherever I am
 * my notes *might* be useful to other people, hence there is a *possible* benefit of them being public, set against minimal disadvantages of them being public (the only one I can think of is that people could get a bad impression of my education and skills from the quality/extent of my notes)
+* by sharing my notes I *might* inspire others to do the same, and if they do there's a good chance their notes will be useful to other people
 
 ## Advantages of GitHub
 * online file editing
@@ -27,3 +28,6 @@ I am using this User repository to store my notes.
 * Time taken (writing / maintaining)
 * Might not actually end up referring to them that much
 * Might make mistakes
+* 
+## Attribution
+Some the notes in this repository started long before I thought about making them public, and sometimes copied and pasted text without attribution. I would be happy to provide attribution, re-write or remove as required.
