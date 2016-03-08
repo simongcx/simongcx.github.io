@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<title>Menu v0-0-1</title>
+ <script>
+$(function() {
+	$( "#menu" ).menu();
+});
+</script>
+ <style>
+.ui-menu { width: 150px; }
+body {
+	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	font-size: 62.5%;
+}
+
+.ui-menu:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.ui-menu .ui-menu-item {
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+</style>
+</head>
+
+<body>
+
+<ul id="menu">
+<li><a href="#"><span class="ui-icon ui-icon-disk"></span>Save</a></li>
+<li><a href="#"><span class="ui-icon ui-icon-zoomin"></span>Zoom In</a></li>
+<li><a href="#"><span class="ui-icon ui-icon-zoomout"></span>Zoom Out</a></li>
+<li class="ui-state-disabled"><a href="#"><span class="ui-icon ui-icon-print"></span>Print...</a></li>
+<li>
+<a href="#">Playback</a>
+<ul>
+<li><a href="#"><span class="ui-icon ui-icon-seek-start"></span>Prev</a></li>
+<li><a href="#"><span class="ui-icon ui-icon-stop"></span>Stop</a></li>
+<li><a href="#"><span class="ui-icon ui-icon-play"></span>Play</a></li>
+<li><a href="#"><span class="ui-icon ui-icon-seek-end"></span>Next</a></li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>

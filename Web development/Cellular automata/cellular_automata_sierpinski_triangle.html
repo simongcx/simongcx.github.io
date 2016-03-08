@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+
+String.prototype.repeat = function( num )
+{
+    return new Array( num + 1 ).join( this );
+}
+
+
+ruleset = {
+	"000" : "0",
+	"001" : "1",
+	"010" : "0",
+	"011" : "1",
+	"100" : "1",
+	"101" : "0",
+	"110" : "1",
+	"111" : "0"
+};
+
+ruleset = {
+	"000" : "0",
+	"001" : "1",
+	"010" : "1",
+	"011" : "0",
+	"100" : "0",
+	"101" : "1",
+	"110" : "1",
+	"111" : "0"
+};
+
+generation = "0".repeat(50) + "1" + "0".repeat(50);
+
+function getnextgeneration(generation) {
+	
+	var key = generation.substring(generation.length - 1, generation.length) + generation.substring(0,2);
+	var nextgeneration = ruleset[key];
+	
+	for (var i = 1; i < generation.length - 1; i++) {
+		key = generation.substring(i-1,i+2);
+		nextgeneration = nextgeneration + ruleset[key];
+	}
+	
+	key = generation.substring(generation.length - 2, generation.length) + generation.substring(0,1);
+	nextgeneration = nextgeneration + ruleset[key];
+	
+	return nextgeneration;
+}
+
+function writeline(line) {
+	var p = document.createElement("p");
+	p.appendChild(document.createTextNode(line));
+	document.body.appendChild(p);
+}
+
+window.onload = function () {
+	for (var i = 0; i < 50; i++) {
+		writeline(generation);
+		generation = getnextgeneration(generation);
+	}
+}
+
+
+</script>
+<style>
+p {
+    font-family: "Courier New", Courier, monospace;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+</style>
+</head>
+<body>
+<a href="http://natureofcode.com/book/chapter-7-cellular-automata/">http://natureofcode.com/book/chapter-7-cellular-automata/</a><br/>
+
+</body>
+</html>      

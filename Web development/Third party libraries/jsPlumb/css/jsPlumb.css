@@ -1,0 +1,26 @@
+/* Style file for jsPlumb experiments */
+
+.box {
+        border: 1px solid black;
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        z-index:4000;
+        -moz-border-radius-topleft: 10px;
+        -webkit-border-top-left-radius: 10px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 5px #888888;
+        background-color: #8FBC8F;
+        display:table;
+        overflow: hidden;
+        text-align:center;
+}
+
+.innerbox {
+        display: table-cell;
+        vertical-align: middle;
+}
+
+._jsPlumb_connector {
+        z-index:9;
+}

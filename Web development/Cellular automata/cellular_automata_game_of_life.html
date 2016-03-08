@@ -1,0 +1,168 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Game of Life</title>
+<script>
+
+state = {
+
+	width : 80,
+	height : 80,
+	grid : [],
+
+	tilewidth : 10,
+	tileheight : 10,
+	
+	offsets : [
+		[-1,-1],
+		[0,-1],
+		[1,-1],
+		[-1,0],
+		[1,0],
+		[-1,1],
+		[0,1],
+		[1,1]
+    ],
+	
+	interval : 100
+	
+}
+    
+window.onload=function(){
+    buildgrid(state);
+};
+
+function buildgrid(state) {
+
+	for (var x = 0; x < state.width; x++) {
+		var column = [];
+		for (var y = 0; y < state.height; y++) {
+            if (Math.random() > 0.5) {
+                column.push({colour:"black"});
+            }
+            else {
+                column.push({colour:"white"});
+            }
+		}
+		state.grid.push(column);
+	}
+
+	for (var x = 0; x < state.width; x++) {
+		for (var y = 0; y < state.height; y++) {
+			var tilediv = document.createElement("div");
+			tilediv.style.background = state.grid[x][y].colour;
+			tilediv.style.width = state.tilewidth;
+			tilediv.style.height = state.tileheight;
+			tilediv.style.position = "absolute";
+			tilediv.style.left = coordinatestoposition(x, y, state)[0];
+			tilediv.style.top = coordinatestoposition(x, y, state)[1];
+			tilediv.style.zIndex="1";
+			tilediv.setAttribute('draggable', true);
+			document.getElementById("gridholder").appendChild(tilediv);
+			state.grid[x][y].tilediv = tilediv;
+		}
+	}
+
+
+    // build the background grid
+	for (var x = 0; x < state.width; x++) {
+		for (var y = 0; y < state.width; y++) {
+			var tilediv = document.createElement("div");
+            tilediv.className = "backgroundtile";
+			//tilediv.style.background = white;
+			tilediv.style.width = state.tilewidth;
+			tilediv.style.height = state.tileheight;
+			//tilediv.style.position = "absolute";
+			tilediv.style.left = x * (state.tilewidth + 1);
+			tilediv.style.top = y * (state.tileheight + 1);
+			document.getElementById("gridholder").appendChild(tilediv);
+		}
+	}
+
+	setInterval(function(){ generatenewgrid(state) }, state.interval);
+	
+}
+
+function coordinatestoposition(x, y, state) {
+    return [x * (state.tilewidth + 1) + 1, y * (state.tileheight + 1) + 1];
+}
+
+function generatenewgrid(state) {
+	var newcolours = [];
+	
+	for (var x = 0; x < state.width; x++) {
+		var column = [];
+		for (var y = 0; y < state.height; y++) {
+			column.push(getnewcolour(x, y, state));
+		}
+		newcolours.push(column);
+	}
+
+	for (var x = 0; x < state.width; x++) {
+		for (var y = 0; y < state.height; y++) {
+			state.grid[x][y].colour = newcolours[x][y];
+			state.grid[x][y].tilediv.style.background = state.grid[x][y].colour;
+		}
+	}
+	
+}
+
+function getnewcolour(x, y, state) {
+
+	var counter = 0
+	var newcolour;
+
+	for (var i = 0; i < state.offsets.length; i++) {
+		var offsetx = x + state.offsets[i][0];
+		var offsety = y + state.offsets[i][1];
+		if (offsetx >= 0 && offsetx < state.width && offsety >=0 && offsety < state.height) {
+			if (state.grid[offsetx][offsety].colour === "black") {
+				counter = counter + 1;
+			}
+		}
+	}
+
+	var currentcellcolour = state.grid[x][y].colour;
+	
+	if (currentcellcolour == 'black') {
+		if (counter == 2 || counter == 3) {
+			newcolour = 'black';
+		}
+		else {
+			newcolour = 'white';
+		}
+	}
+	else {
+		if (counter == 3) {
+			newcolour = 'black';
+		}
+		else {
+			newcolour = 'white';
+		}
+	}
+			
+	return newcolour;
+}
+
+
+    
+</script>
+<style>
+.backgroundtile {
+    position: absolute;
+    background: grey;
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
+    
+}
+</style>
+</head>
+
+<body>
+<a href="http://natureofcode.com/book/chapter-7-cellular-automata/">http://natureofcode.com/book/chapter-7-cellular-automata/</a>
+<div id="gridholder" style="position:relative;">
+</div>
+
+
+</body>
+</html>

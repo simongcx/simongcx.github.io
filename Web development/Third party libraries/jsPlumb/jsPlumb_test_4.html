@@ -1,0 +1,96 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.jsPlumb-1.3.10-all.js"></script>
+<link rel="stylesheet" href="css/jsPlumb v4.css" type="text/css" media="all" />
+</head>
+<body>
+
+<body>
+<div id="A" class="box" style="left:200px;top:200px">
+<div class="innerbox">
+<a href="http://www.google.com/?=a" target="_blank">a</a>
+</div>
+</div>
+<div id="B" class="box" style="left:200px;top:400px">
+<div class="innerbox">
+Two words
+</div>
+</div>
+<div id="Z" class="box" style="left:400px;top:200px">
+<div class="innerbox">
+Three small words
+</div>
+</div>
+<div id="Y" class="box" style="left:400px;top:400px">
+<div class="innerbox">
+Lots and lots and lots and lots and lots and lots and lots and lots and lots of words
+</div>
+</div>
+
+<script type="text/javascript">
+
+function connectorclick(connection, originalEvent) {
+if (connection.sourceId == "Z" && connection.targetId == "Y") {alert("Z to Y")};
+}
+
+
+jsPlumb.bind("ready", function() {
+
+jsPlumb.importDefaults({
+	PaintStyle:{ lineWidth:2, strokeStyle:"black", outlineColor:"black", outlineWidth:0 },
+	Connector:[ "Bezier", { curviness: 150 } ],
+	Endpoint:[ "Dot", { radius:1} ],
+	EndpointStyle : { fillStyle: "#567567"  },
+});
+
+var e0 = jsPlumb.addEndpoint("A", { anchor:"BottomCenter" }),
+    e4 = jsPlumb.addEndpoint("A", { anchor:"BottomCenter" }),
+   	e1 = jsPlumb.addEndpoint("B"),
+    e2 = jsPlumb.addEndpoint("Z"),
+    e5 = jsPlumb.addEndpoint("Z", { anchor:"BottomCenter" }),
+    e3 = jsPlumb.addEndpoint("Y");
+
+
+jsPlumb.connect({
+    source:e0,
+    target:e1,
+    overlays:[
+    [ "Arrow", { width:15, length:30, id:"arrow", fillStyle:"black"} ]
+    ]
+    });
+
+jsPlumb.connect({
+    source:e4,
+    target:e2,
+    overlays:[
+    [ "Arrow", { width:15, length:30, id:"arrow", fillStyle:"black"} ]
+    ]
+    });
+
+jsPlumb.connect({
+    source:e5,
+    target:e3,
+    overlays:[
+    [ "Arrow", { width:15, length:30, id:"arrow", fillStyle:"black"} ]
+    ]
+    });
+
+jsPlumb.draggable($(".box"));
+
+//jsPlumb.bind("click", function(connection, originalEvent) { alert("click on connection from " + connection.sourceId + " to " + connection.targetId); });
+
+//jsPlumb.bind("click", function(connection, originalEvent) { alert("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."); });
+
+jsPlumb.bind("click", connectorclick);
+
+});
+</script>
+</body>
+</html>
+
+
+</script>
+</body>
+</html>

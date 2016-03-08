@@ -1,0 +1,51 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.jsPlumb-1.3.10-all.js"></script>
+<link rel="stylesheet" href="css/jsPlumb.css" type="text/css" media="all" />
+</head>
+<body>
+<div id="A" class="box" style="left:200px;top:200px">
+<div class="innerbox">
+A-end
+</div>
+</div>
+<div id="B" class="box" style="left:200px;top:400px">
+<div class="innerbox">
+B-end
+</div>
+</div>
+<script type="text/javascript">
+jsPlumb.bind("ready", function() {
+
+jsPlumb.importDefaults({
+	PaintStyle:{ lineWidth:2, strokeStyle:"black", outlineColor:"black", outlineWidth:0 },
+	Connector:[ "Bezier", { curviness: 150 } ],
+	Endpoint:[ "Dot", { radius:1} ],
+	EndpointStyle : { fillStyle: "#567567"  },
+});
+
+var e0 = jsPlumb.addEndpoint("A", { anchor:"BottomCenter" }),
+   	e1 = jsPlumb.addEndpoint("B");
+
+jsPlumb.connect({
+    source:e0,
+    target:e1,
+    endpoint:new jsPlumb.Endpoints.Rectangle({width:10, height:15}),
+    overlays:[
+    [ "Arrow", { width:15, length:30, id:"arrow", fillStyle:"black"} ]
+    ]
+    });
+
+jsPlumb.draggable($(".box"));
+
+});
+</script>
+</body>
+</html>
+
+
+</script>
+</body>
+</html>

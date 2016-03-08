@@ -1,0 +1,221 @@
+Path: C:\Users\Simon
+Attributes: 16
+DateCreated: 24/12/2015 05:32:40
+DateLastAccessed: 25/02/2016 21:20:19
+DateLastModified: 25/02/2016 21:20:19
+Drive: C:
+IsRootFolder: False
+Name: Simon
+ParentFolder: C:\Users
+Path: C:\Users\Simon
+ShortName: Simon
+ShortPath: C:\Users\Simon
+Type: System Folder
+C:\Users\Simon\.gimp-2.8
+C:\Users\Simon\.oracle_jre_usage
+C:\Users\Simon\.ssh
+C:\Users\Simon\.swt
+C:\Users\Simon\.thumbnails
+C:\Users\Simon\.VirtualBox
+C:\Users\Simon\AppData
+C:\Users\Simon\Application Data
+C:\Users\Simon\Contacts
+C:\Users\Simon\Cookies
+C:\Users\Simon\Copy
+C:\Users\Simon\Desktop
+C:\Users\Simon\Documents
+C:\Users\Simon\Downloads
+C:\Users\Simon\Dropbox
+C:\Users\Simon\Favorites
+C:\Users\Simon\Google
+C:\Users\Simon\Google Drive
+C:\Users\Simon\Links
+C:\Users\Simon\Local Settings
+C:\Users\Simon\Music
+C:\Users\Simon\My Documents
+C:\Users\Simon\NetHood
+C:\Users\Simon\Pictures
+C:\Users\Simon\PrintHood
+C:\Users\Simon\Recent
+C:\Users\Simon\Roaming
+C:\Users\Simon\Saved Games
+C:\Users\Simon\Searches
+C:\Users\Simon\SendTo
+C:\Users\Simon\Start Menu
+C:\Users\Simon\Templates
+C:\Users\Simon\Tracing
+C:\Users\Simon\Videos
+C:\Users\Simon\VirtualBox VMs
+ GIMP-2~1.8
+  brushes
+  curves
+  dynamics
+  environ
+  fonts
+  FRACTA~1
+  gfig
+  gflare
+  GIMPRE~1
+  GRADIE~1
+  INTERP~1
+  levels
+  modules
+  palettes
+  patterns
+  plug-ins
+  scripts
+  TEMPLA~1
+  themes
+  tmp
+  TOOL-O~1
+  TOOL-P~1
+ ORACLE~1
+ SSH~1
+ SWT~1
+  lib
+   win32
+    x86_64
+ THUMBN~1
+  normal
+ VIRTUA~1
+ AppData
+  Local
+   0ad
+   ACTIVE~1
+    KOMODO~2
+     ACTIVE~1
+      lib
+       mozilla
+    KOMODO~1
+     9.3
+      autosave
+      CODEIN~1
+       db
+        catalogs
+         JAVASC~1
+         python
+         python3
+         ruby
+        stdlibs
+         JAVASC~1
+         node.js
+         perl-5.16
+         perl-5.8
+         php-4.4
+         php-5.2
+         php-5.3
+         php-5.4
+         php-5.5
+         php-5.6
+         python-2.7
+         PYTHON~1.1
+         PYTHON~1.2
+         PYTHON~1.3
+         ruby-1.8
+         RUBY-1~1.2
+         RUBY-1~1.3
+      PROJEC~1
+       MYTEMP~1
+      samples
+       tools
+        ABBREV~1
+         General
+         HTML-C~1
+          HTML
+          HTML5
+          _
+           elements
+           NODETY~1
+         JAVASC~1
+          JAVASC~1
+          Node.js
+          _
+           jQuery
+           keywords
+         Perl
+          keywords
+         PHP
+          Drupal
+         PYTHON~1
+          Python
+          Python3
+          _
+         RHTML
+         Ruby
+          keywords
+          Rails
+         Tcl
+         XUL
+         YAML
+        HTML
+        SAMPLE~1
+      schemes
+      TEMPLA~1
+       MYTEMP~1
+      tools
+       ABBREV~1
+        General
+        HTML-C~1
+         HTML
+         HTML5
+         _
+          elements
+          NODETY~1
+        JAVASC~1
+         JAVASC~1
+         Node.js
+         _
+          jQuery
+          keywords
+        Perl
+         keywords
+        PHP
+         Drupal
+        PYTHON~1
+         Python
+         Python3
+         _
+        RHTML
+        Ruby
+         keywords
+         Rails
+        Tcl
+        XUL
+        YAML
+       HTML
+       SAMPLE~1
+      XRE
+       cache2
+        doomed
+        entries
+       crashes
+        events
+       icons
+        chrome
+         FONTAW~1
+          skin
+         icomoon
+          skin
+        FILEIC~1
+       LESSCA~1
+        145476~1
+         chrome
+          komodo
+           skin
+        145476~2
+         chrome
+          console
+           content
+            less
+          GETSTA~1
+           skin
+          komodo
+           skin
+          KOMODO~1
+           skin
+          OPENFI~1
+           skin
+       MINIDU~1
+       STARTU~1
+       USERST~1
+   APPLIC~1

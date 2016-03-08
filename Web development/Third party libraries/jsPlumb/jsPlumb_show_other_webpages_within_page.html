@@ -1,0 +1,38 @@
+<html><head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.jsPlumb-1.3.10-all.js"></script>
+<link rel="stylesheet" href="css/jsPlumb.css" type="text/css" media="all" />
+
+</head><body>
+<div id="A" class="box" style="left:200px;top:200px">
+<object type="text/html" data="http://en.wikipedia.org/w/index.php?title=Woodworking&printable=yes">
+<p>backup content</p>
+</object>
+
+
+<div id="B" class="box" style="left:200px;top:400px">
+<object type="text/html" data="http://en.m.wikipedia.org/wiki/Woodworking">
+<p>backup content</p>
+</object>
+</div>
+
+<script type="text/javascript">
+jsPlumb.bind("ready", function() {
+
+var e0 = jsPlumb.addEndpoint("A"),
+	e1 = jsPlumb.addEndpoint("B");
+
+jsPlumb.importDefaults({
+  Connector : [ "Bezier", { curviness: 150 } ],
+  Anchors : [ "TopCenter", "BottomCenter" ]
+});
+
+jsPlumb.connect({ source:e0, target:e1 });
+
+});
+
+
+</script>
+</body>
+</html>

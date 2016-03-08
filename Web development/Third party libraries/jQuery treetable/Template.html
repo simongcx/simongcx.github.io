@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<link href="jquery.treetable.css" rel="stylesheet" type="text/css" />
+<link href="jquery.treetable.theme.default.css" rel="stylesheet" type="text/css" />
+<script src="jquery.treetable.js"></script>
+<script>
+window.onload=function(){
+        $("#your_table_id").treetable({ expandable: true });
+};
+</script>
+<title></title>
+<script>
+</script>
+<style>
+</style>
+</head>
+
+<body>
+
+    <table id="your_table_id">
+        <tr data-tt-id="1"><td>Level 1</td></tr>
+        <tr data-tt-id="1-1" data-tt-parent-id="1"><td>Level 2</td></tr>
+    </table>
+
+</body>
+</html>

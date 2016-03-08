@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<title>Canvas polygons</title>
+<script>
+
+window.onload = function() {
+    canvas = document.getElementById('c')
+    addpolygon();
+    console.log(randomcolor());
+}
+
+function addpolygon() {
+    document.body.style.background = randomcolor();
+    var winsiz = windowsize();
+    canvas.width = winsiz[0]; //note, resetting canvas size clears the canvas
+    canvas.height = winsiz[1];
+    var numsides = Math.round(Math.random()*17) + 2;
+    c2 = canvas.getContext('2d');
+    c2.fillStyle = randomcolor();
+    c2.beginPath();
+    c2.moveTo(Math.round(Math.random()*winsiz[0]), Math.round(Math.random()*winsiz[1]));
+    for (var i = 0; i < numsides; i++) {
+        c2.lineTo(Math.round(Math.random()*winsiz[0]), Math.round(Math.random()*winsiz[1]));
+    }
+    c2.closePath();
+    c2.fill();
+    setTimeout(function() {addpolygon()}, 600);
+}
+
+function randomcolor() {
+    return "rgb(" + Math.round(Math.random()*255).toString() + "," + Math.round(Math.random()*255).toString() + ","+ Math.round(Math.random()*255).toString() + ")"
+}
+
+function windowsize() {
+    var winW = 630, winH = 460;
+    if (document.body && document.body.offsetWidth) {
+        winW = document.body.offsetWidth;
+        winH = document.body.offsetHeight;
+    }
+    if (document.compatMode=='CSS1Compat' &&
+        document.documentElement &&
+        document.documentElement.offsetWidth ) {
+        winW = document.documentElement.offsetWidth;
+        winH = document.documentElement.offsetHeight;
+    }
+    if (window.innerWidth && window.innerHeight) {
+        winW = window.innerWidth;
+        winH = window.innerHeight;
+    }
+    return [winW, winH];
+}
+
+</script>
+<style>
+body {
+    padding:0px;
+    margin:0px;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<canvas id="c" />
+
+</body>
+</html>

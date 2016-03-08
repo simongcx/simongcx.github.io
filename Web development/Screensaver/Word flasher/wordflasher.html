@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="dic.js"></script>
+<title>Word flasher</title>
+<script>
+
+
+
+window.onload = function() {
+    changeword();
+}
+
+function changeword() {
+    document.body.style.background = randomcolor();
+    var myNode = document.getElementById("worddiv");
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.firstChild);
+    }
+    randwordno = Math.round(Math.random()*(wordlist.length-1))
+    myNode.appendChild(document.createTextNode(wordlist[randwordno]));
+    myNode.style.color = randomcolor();
+    myNode.style.fontSize = "1px";
+    screenwidth = windowsize()[0] - 80;
+    screenheight = windowsize()[1] - 50;
+    counter = 10;
+    while (myNode.offsetWidth < screenwidth && myNode.offsetHeight < screenheight) {
+        myNode.style.fontSize = counter.toString() + "px";
+        counter += 10;
+        //console.log(counter);
+    }
+    document.getElementById("container").style.marginTop = (Math.round((screenheight - myNode.offsetHeight) / 2)).toString() + "px";
+    console.log(document.getElementById("container").style.marginTop);
+    setTimeout(function() {changeword()}, 600);
+}
+
+function randomcolor() {
+    return "rgb(" + Math.round(Math.random()*255).toString() + "," + Math.round(Math.random()*255).toString() + ","+ Math.round(Math.random()*255).toString() + ")"
+}
+
+function windowsize() {
+    var winW = 630, winH = 460;
+    if (document.body && document.body.offsetWidth) {
+        winW = document.body.offsetWidth;
+        winH = document.body.offsetHeight;
+    }
+    if (document.compatMode=='CSS1Compat' &&
+        document.documentElement &&
+        document.documentElement.offsetWidth ) {
+        winW = document.documentElement.offsetWidth;
+        winH = document.documentElement.offsetHeight;
+    }
+    if (window.innerWidth && window.innerHeight) {
+        winW = window.innerWidth;
+        winH = window.innerHeight;
+    }
+    return [winW, winH];
+}
+
+</script>
+<style>
+body {
+    margin:0px;
+}
+#container {
+    text-align:center;
+}
+#worddiv {
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+<span id="worddiv"></span>
+</div>
+</body>
+</html>

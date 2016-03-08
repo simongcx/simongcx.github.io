@@ -1,0 +1,89 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="http://cdn.jsdelivr.net/json2/0.1/json2.min.js"></script>
+<title></title>
+<script>
+
+function showanimation() {
+    var div = document.createElement("div");
+    div.style.width = "31px";
+    div.style.height = "31px";
+    div.style.position = "absolute";
+    div.style.background = "blue";
+    document.getElementById("parentdiv").appendChild(div);
+    
+    var div2 = document.createElement("div");
+    div2.style.width = "31px";
+    div2.style.height = "31px";
+    div2.style.position = "absolute";
+    div2.style.background = "blue";
+    document.getElementById("parentdiv").appendChild(div2);
+    
+    var animlist = [];
+    
+    for (var i = 0; i < 10; i++) {
+
+        var left = Math.round(Math.random() * 500);
+        var top = Math.round(Math.random() * 500);
+        var duration = 100 * Math.round(Math.random() * 10);
+        
+        var left2 = Math.round(Math.random() * 500);
+        var top2 = Math.round(Math.random() * 500);
+        var duration2 = 100 * Math.round(Math.random() * 10);
+        
+        //animlist.push([{element:div, type:"animate", properties:{"left":left, "top":top}, duration: duration}, {element:div2, type:"animate", properties:{"left":left2, "top":top2}, duration: duration2}]);
+        animlist.push([$(div).animate({"left":left, "top":top}, duration), $(div2).animate({"left":left2, "top":top2}, duration2)]);
+    }
+    
+    console.log(animlist.length);
+    animatelist(animlist, function(){});
+
+}
+
+function animatelist(animlist, callback) {
+    
+    var func;
+    
+    for (var i = (animlist.length - 1); i >= 0; i--) {
+        
+        console.log("got to this bit");
+        
+        func = function (animsublist, callback) {
+        
+            var innerfunc = function() {
+                
+                //for (var k = 0; k < animsublist.length
+        
+                
+                $.when.apply($, animsublist).then(callback);
+            }
+            
+            return innerfunc;
+        }(animlist[i], callback);
+        
+        callback = func;
+    }
+    
+    func();
+}
+
+
+
+function deleteel(element) {
+    element.parentNode.removeChild(element);
+}
+    
+</script>
+</head>
+
+<body>
+
+<div id="parentdiv" style="width:500px;height:500px;position:relative;background:grey"></div>
+<br/><br/>
+<button onclick="showanimation()">Click me!</button><br/><br/>
+
+</body>
+</html>

@@ -15,3 +15,15 @@ I am using this User repository to store my notes.
 ## Features I'd like that aren't on GitHub
 * Generated contents page with hyperlink to headings (although I could generate this myself)
 * Numbered headings
+
+
+## Why write notes?
+* Information is typically spread across numerous sources
+* Sources often contain more information than it is likely to be valuable to learn (i.e. better as a reference source than something to memorise)
+* Memory is unreliable
+* Helps structure learning
+
+## And why not to
+* Time taken (writing / maintaining)
+* Might not actually end up referring to them that much
+* Might make mistakes

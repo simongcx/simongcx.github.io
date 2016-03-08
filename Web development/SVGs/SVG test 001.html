@@ -1,0 +1,104 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://cdn.jsdelivr.net/json2/0.1/json2.min.js"></script>
+<title></title>
+<script>
+
+var gamestate = {
+    gridwidth : 10,
+    gridheight : 10,
+    sectorwidthpx : 50,
+    sectorheightpx : 50
+}
+
+var tiletypes = {
+    flatsurface : {
+        backgroundpoly : [[0,0], [1,0],[1,1],[0,1]],
+        backgroundcolor : "blue",
+        foregroundpoly : [[0,0.5],[1,0.5],[1,1],[0,1]],
+        foregroundcolor : "brown",
+        path : [],
+        pathcolor : "lime"
+    }
+    
+}
+
+function createsectorelement(properties) {
+    var svgNS = "http://www.w3.org/2000/svg";  
+    var background = document.createElementNS(svgNS, "polygon");
+    var backgroundpoints = "";
+    for (var i = 0; i < properties.backgroundpoly.length; i++) {
+        backgroundpoints = backgroundpoints + properties.backgroundpoly[i][0] * 50 + "," + properties.backgroundpoly[i][1] * 50 + " ";
+    };
+    backgroundpoints = backgroundpoints.trim();
+    background.setAttributeNS(null, "points", backgroundpoints); 
+    background.setAttributeNS(null,"fill",properties.backgroundcolor);
+    
+    var foreground = document.createElementNS(svgNS, "polygon");
+    var foregroundpoints = "";
+    for (var i = 0; i < properties.foregroundpoly.length; i++) {
+        foregroundpoints = foregroundpoints + properties.foregroundpoly[i][0] * 50 + "," + properties.foregroundpoly[i][1] * 50 + " ";
+    };
+    foregroundpoints = foregroundpoints.trim();
+    foreground.setAttributeNS(null, "points", foregroundpoints); 
+    foreground.setAttributeNS(null,"fill",properties.foregroundcolor);
+    
+    
+    var svg = document.createElementNS(svgNS,"svg");
+    svg.setAttributeNS(null,"width", 50 + "px");
+    svg.setAttributeNS(null,"height", 50 + "px");
+    svg.style.position = "absolute";
+    svg.style.top = 0 + "px";
+    svg.style.left = 150 + "px";
+    svg.appendChild(background);
+    svg.appendChild(foreground);
+    
+    document.getElementById("grid").appendChild(svg);
+}
+
+window.onload=function(){
+    createsectorelement(tiletypes.flatsurface);
+};
+
+
+
+
+    
+function hello() {
+    alert("hello");
+}
+    
+</script>
+<style>
+</style>
+</head>
+
+<body>
+
+<div style="position:relative;width:500px; height:500px; background-color:black" id="grid">
+
+<svg height="50" width="50" style="position:absolute;" onclick="hello()">
+  <polygon points="0,25 50,25 50,50 0,50" style="fill:brown;" />
+  <polygon points="0,0 50,0 50,25 0,25" style="fill:blue;" />
+  <path d="M 0 25 L 50 25" stroke="lime" stroke-width="2" fill="none" />
+</svg>
+
+<svg height="50" width="50" style="position:absolute;top:0px;left:51px">
+    <polygon points="0,0 50,0 50,50 0,50" style="fill:blue;" />
+    <polygon points="0,25 25,25 50,0 50,50 0,50" style="fill:brown;" />
+    <path d="M 0 25 L 25 25 L 50 0" stroke="lime" stroke-width="2" fill="none" />
+</svg>
+
+<svg height="50" width="50" style="position:absolute;top:0px;left:102px">
+    <polygon points="0,0 50,0 50,50 0,50" style="fill:blue;" />
+    <polygon points="0,50 25,25 50,25 50,50 0,50" style="fill:brown;" />
+    <path d="M 0 50 L 25 25 L 50 25" stroke="lime" stroke-width="2" fill="none" />
+</svg>
+
+</div>
+
+
+</body>
+</html>

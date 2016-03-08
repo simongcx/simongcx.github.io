@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://fiddle.jshell.net/futa3k3g/show/light/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title> - jsFiddle demo</title>
+  
+  <script type="text/javascript" src="jquery-2.1.0.js"></script>
+  
+  
+  
+  
+  <link rel="stylesheet" type="text/css" href="result-light.css">
+  
+  <style type="text/css">
+    
+  </style>
+  
+</head>
+<body>
+  <script src="jquery.min.js"></script>
+<div id="animationcontainer" style="position:relative; width:500px; height:500px; background-color:grey"></div>
+<button id="button1">Animation 1</button>
+<button id="button2">Animation 2</button>
+<button id="button3">Both animations</button>
+<button id="button4">Both animations</button>
+  
+
+
+<script type="text/javascript">//<![CDATA[ 
+
+function animation1(){
+    var div1 = $("<div />", {
+        css : {
+            position   : 'absolute',
+            left       : '0px',
+            top        : '0px',
+            width      : '10px',
+            height     : '10px',
+            background : 'red'
+        }
+    });
+    
+    $("#animationcontainer").append(div1);
+
+    return div1.animate({top: "50"}, "slow")
+               .animate({left: "+50"}, "slow")
+               .animate({top: "20", left: "0"}, "slow")
+               .animate({height: "50", top: "110", left: "0"}, "slow").promise().done(function() {
+                   $(this).remove();
+               });
+}
+
+function animation2(){
+    var div1 = $("<div />", {
+        css : {
+            position   : 'absolute',
+            left       : '100px',
+            top        : '100px',
+            width      : '15px',
+            height     : '15px',
+            background : 'blue'
+        }
+    });
+    
+    $("#animationcontainer").append(div1);
+
+    return div1.animate({top: "10"}, "fast")
+               .animate({left: "+60"}, "slow")
+               .animate({top: "200", left: "100"}, "slow")
+               .animate({width: "50", top: "10", left: "100"}, "slow")
+               .promise()
+               .done(function() {
+                   $(this).remove();
+               });        
+}
+
+function animation3() {
+    return $.when(animation1(), animation2()).promise();
+}    
+
+function animation4() {
+    var div1 = $("<div />", {
+        css : {
+            position   : 'absolute',
+            left       : '100px',
+            top        : '100px',
+            width      : '5px',
+            height     : '5px',
+            background : 'blue'
+        }
+    });
+    
+    $("#animationcontainer").append(div1);
+
+    return div1.animate({top: "450"}, {duration : 10000})
+               .promise()
+               .done(function() {
+                   $(this).remove();
+               });  
+}
+    
+$('#button1').on('click', function() {
+    animation1().done(function() {
+        alert('finished');
+    });
+});
+
+$('#button2').on('click', function() {
+    animation2().done(function() {
+        alert('finished');
+    });
+});
+
+$('#button3').on('click', function() {
+    $.when(animation1(), animation2()).done(function() {
+        alert('finished');
+    });
+});
+
+$('#button4').on('click', function() {
+    $.when(animation3(), animation4()).done(function() {
+        alert('finished');
+    });
+});
+//]]>  
+
+</script>
+
+
+
+
+
+
+
+</body></html>

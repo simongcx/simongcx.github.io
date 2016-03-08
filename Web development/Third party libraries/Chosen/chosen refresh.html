@@ -1,0 +1,51 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
+<script src="chosen_v1.0.0/chosen.jquery.js"></script>
+<script src="chosen_v1.0.0/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="chosen_v1.0.0/chosen.css">
+<title></title>
+<script>
+
+jQuery(document).ready(function(){
+    jQuery("#chosen-select").chosen({width:'369px'});
+});
+
+
+function refreshselect() {
+    $("#chosen-select").chosen('destroy');  
+    $("#chosen-select").prop("selectedIndex", -1);   
+    $("#chosen-select").chosen({width:'369px'});
+}
+
+function addoption() {
+    var select = document.getElementById("chosen-select");
+    var option = document.createElement("option");
+    option.text = document.getElementById("newoption").value;
+    option.value = document.getElementById("newoption").value;
+    try {
+	// for IE earlier than version 8
+	select.add(option,select.options[null]);
+    }
+    catch (e) {
+      select.add(option,null);
+    }
+    refreshselect();
+    document.getElementById("newoption").value = "";
+}
+
+
+
+</script>
+<style>
+</style>
+</head>
+
+<body>
+<select id="chosen-select"><option value="3">Three</option></option><option value="4">Four</option></select>
+
+<br>
+<input id="newoption"></input><button onclick="addoption()">Add new option</button>
+
+</body>
+</html>

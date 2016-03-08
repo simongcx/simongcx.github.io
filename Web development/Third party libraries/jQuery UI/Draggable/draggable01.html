@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>draggable demo</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <style>
+  #draggable {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+  }
+  </style>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+</head>
+<body>
+ 
+<div id="draggable">Drag me</div>
+ 
+<script>
+$( "#draggable" ).draggable();
+
+$( "#draggable" ).on( "dragstop", function( event, ui ) {logendposition(event, ui)} );
+
+function logendposition(event, ui) {
+    console.log(ui);
+}
+
+
+</script>
+ 
+</body>
+</html>
