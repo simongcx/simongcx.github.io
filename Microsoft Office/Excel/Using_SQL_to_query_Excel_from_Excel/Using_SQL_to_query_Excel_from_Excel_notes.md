@@ -11,6 +11,7 @@ There's a lot of data in Excel because:
 But, Excel's mainstream tools (Pivot Tables, Filters, VLOOKUP, SUMPRODUCT, SUMIF, AVERAGEIF, etc) don't allow you all the expressive power of SQL.
 
 And some thoughts on why it's not a good idea:
+
 * Spreadsheets don't enforce data types
 * Spreadsheets don't enforce keys
 * It's so easy to make a mistake
