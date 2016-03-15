@@ -49,6 +49,7 @@ M:N unary relationship: A Subject may have many other Subjects as prerequisites 
 ## Storing configuration data
 There are two broad approaches to storing configuration data in relational databases:
 the single-row table, e.g.
+
   CompanyName  |  StartFullScreen  |  RefreshSeconds  |  ...
 ---------------|-------------------|------------------|--------
   ACME Inc.    |        true       |       20         |  ...
@@ -74,6 +75,7 @@ and the name-value-pair table.
 
 ### Other approaches
 Use multiple columns for the value in the name-value-pair table allowing the database's type system to be used, e.g.
+
 ConfigOption   |   textValue    |   DateValue   |   NumericValue
 ---------------|----------------|---------------|-----------------
      ...       |      ...       |     ...       |      ...     
