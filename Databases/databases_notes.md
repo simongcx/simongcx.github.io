@@ -76,7 +76,7 @@ and the name-value-pair table.
 Use multiple columns for the value in the name-value-pair table allowing the database's type system to be used, e.g.
 ConfigOption   |   textValue    |   DateValue   |   NumericValue
 ---------------|----------------|---------------|-----------------
-               |                |               |
+     ...       |      ...       |     ...       |      ...     
 
 Use a single column to capture the datatype in the name-value-pair table allowing the value field to be cast before use, e.g.
 
