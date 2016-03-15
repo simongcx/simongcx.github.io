@@ -29,12 +29,12 @@ And some thoughts on why it's not a good idea:
 ###	Errors
 If you try to select the file that you are inserting the connection into (i.e. the open Excel file) you will get an "Unable to obtain list of tables from the data source" error when you select the file.
 
-![This data source contains no visible tables](This_data_source_contains_no_visible_tables_error.png)
+![Unable to obtain list of tables from the data source error](Unable_to_obtain_list_of_tables_from_the_data_source_error.png)
 
 Having a connection within a file is possible, but this must be set up via VBA, not through the manual method.
 If you select a file that doesn’t have any named range and then deselect the "Connect to a specific table" option you will get a "The document contains no visible table" error.
 
-![Unable to obtain list of tables from the data source error](Unable_to_obtain_list_of_tables_from_the_data_source_error.png)
+![This data source contains no visible tables](This_data_source_contains_no_visible_tables_error.png)
 
 Having a connection to a file without named ranges is possible, but this must be set up via VBA, not through the manual method.
 
