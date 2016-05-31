@@ -109,3 +109,6 @@ Called ListObjects in VBA.
 The `@` symbol is used to reference cells in the same row.
 The inner square brackets are required because there is a space in the column name.
 
+# Tips and tricks
+
+* To insert a new row in multiple sheets simultaneously, first select all the sheets, then do the insert on one of the selected sheets
