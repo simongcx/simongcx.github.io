@@ -14,7 +14,6 @@ Click *ODBC Database*
 Select *Import the source data into a new table in the current database*
 Click *OK*
 Select the *Machine Data Source* tab
-Click on *SageLine50v21*
 Click *New*
 Select *User Data Source (Applies to this machine only)*
 Click *Next*
