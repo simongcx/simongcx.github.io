@@ -1,0 +1,11 @@
+
+* Row order shouldn't matter
+* Column order shouldn't matter (i.e. moving a column position should not break the spreadsheet)
+* Consistent formulae all the way down a column
+* No subtotals
+* No blank rows
+* No columns
+* Use Tables
+* Don't formula-link files that aren't in the same folder
+
+Basically, make it as much like a database as possible.
