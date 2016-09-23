@@ -17,6 +17,56 @@ The script will be run by the default script host.
 Just type the name of the script (extension optional). This will run the script with the default script host.
 Alternatively, type cscript or wscript and then the script name (extension required).
 
+# Error handling
+
+## Handling options
+
+The options for handling errors are:
+
+```vb
+On Error Goto <label>
+On Error Resume Next
+```
+
+To reset the handling:
+
+```
+On Error Goto 0
+```
+
+## How to use `On Error Resume Next` sensibly
+
+```vb
+On Error Resume Next
+'do something that may raise an error here
+If Err.Number <> 0 Then
+    Wscript.Echo "Error: " & Err.Number
+    Wscript.Echo "Error (Hex): " & Hex(Err.Number)
+    Wscript.Echo "Source: " &  Err.Source
+    Wscript.Echo "Description: " &  Err.Description
+    Err.Clear
+    'also handle the error other than just echoing it
+End If
+On Error Goto 0
+```
+
+## Err.Clear
+
+```vb
+Sub ClearErr()
+  ' Produce overflow error
+  On Error Resume Next
+  zero = 0
+  result = 8 / zero
+  MsgBox (Err.Description)
+  Err.Clear
+  MsgBox (Err.Description)
+  On Error GoTo 0
+End Sub
+```
+
+
+
 # IDEs / Tools
 
 * Notepad++ <https://notepad-plus-plus.org/>
