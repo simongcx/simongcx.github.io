@@ -52,6 +52,11 @@ On Error Goto 0
 
 ## Err.Clear
 
+The Clear method is called automatically whenever any of the following statements executes:
+- Any type of Resume statement
+- Exit Sub, Exit Function, or Exit Property
+- Any On Error statement
+
 ```vb
 Sub ClearErr()
   ' Produce overflow error
@@ -65,6 +70,23 @@ Sub ClearErr()
 End Sub
 ```
 
+## Resume
+
+```vb
+Sub ResumeStatementDemo()
+    On Error GoTo ErrorHandler   ' Enable error-handling routine.
+    x = 32
+    y = 0
+    z = x / y   ' Creates a divide by zero error
+    Debug.Print "Out of error handler"
+    Exit Sub   ' Exit Sub to avoid error handler.
+ErrorHandler:     ' Error-handling routine.
+    Debug.Print "In error handler"
+    y = 1 ' Sets the value of y to 1
+    Resume   ' Resume execution at same line
+
+End Sub
+```
 
 
 # IDEs / Tools
