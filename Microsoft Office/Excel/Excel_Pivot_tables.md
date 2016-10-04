@@ -40,3 +40,35 @@ End Sub
 | xlVarP          | -4165 | Variation, based on the whole population.          |
 
 Source: https://msdn.microsoft.com/en-us/library/office/ff837374.aspx
+
+## Orientations
+
+The following subroutine prints the name and orientation of all pivotfields in a pivot table:
+
+```vb
+Sub PrintPivotFieldOrientations()
+
+Dim pvtCurrentPivotTable As PivotTable
+Dim pvf As PivotField
+
+Set pvtCurrentPivotTable = ActiveCell.PivotTable
+
+For Each pvf In pvtCurrentPivotTable.PivotFields
+
+    Debug.Print pvf.Name, pvf.Orientation
+
+Next
+
+End Sub
+```
+
+
+| Name          | Value |
+|---------------|-------|
+| xlHidden      | 0     |
+| xlRowField    | 1     |
+| xlColumnField | 2     |
+| xlPageField   | 3     |
+| xlDataField   | 4     |
+
+Source: https://msdn.microsoft.com/en-us/library/office/ff194695.aspx
