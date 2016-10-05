@@ -4,6 +4,8 @@ By default pivot tables retain history. Whilst this doesn't affect the informati
 
 To fix the issue, right-click on the pivot table, click *Pivot Table Options...*, select the *Data* tab, change the *Number of items to retain per field* dropdown to *None*.
 
+Source: http://www.excelandaccess.com/pivottable-deleted-items-remain/
+
 The below subroutine will apply this setting to every pivot table in every sheet in the active workbook:
 
 ```vb
