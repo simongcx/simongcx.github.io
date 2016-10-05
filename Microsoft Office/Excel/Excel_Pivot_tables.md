@@ -21,6 +21,14 @@ Next
 
 End Sub
 ```
+The other settings within the XlPivotTableMissingItems enumeration are:
+
+| Name                  | Value   |
+|-----------------------|---------|
+| xlMissingItemsDefault | -1      |
+| xlMissingItemsMax     | 32500   |
+| xlMissingItemsMax2    | 1048576 |
+| xlMissingItemsNone    | 0       |
 
 ## Manipulating the data fields with VBA
 
