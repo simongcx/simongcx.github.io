@@ -1,3 +1,26 @@
+## Clearing deleted items
+
+By default pivot tables retain history. Whilst this doesn't affect the information shown in the pivot table, it does affect what is shown in the filter dropdown, which can be confusing.
+
+To fix the issue, right-click on the pivot table, click *Pivot Table Options...*, select the *Data* tab, change the *Number of items to retain per field* dropdown to *None*.
+
+The below subroutine will apply this setting to every pivot table in every sheet in the active workbook:
+
+```vb
+Sub DeleteHistoryFromAllPivotTables()
+
+For Each sht In ActiveWorkbook.Worksheets
+
+    For Each pvt In sht.PivotTables
+    
+        pvt.PivotCache.MissingItemsLimit = xlMissingItemsNone
+
+    Next
+
+Next
+
+End Sub
+```
 
 ## Manipulating the data fields with VBA
 
