@@ -18,6 +18,12 @@ The `mysqli_return` object is not cloneable. References to the object by multipl
 
 `echo` can be used to get text to appear in the client.
 
+### print
+
+```php
+print $variable
+```
+
 ### print_r
 
 `print_r` can be used to human-readable information about a variable. Takes two parameters, the variable and an optional parameter return. If return is true, the value is returned within PHP otherwise it is output to the client.
@@ -29,3 +35,11 @@ error_log(print_r($variable,true));
 `serialize` can be used to get an understanding of what's in an object.
 
 ### error_log
+
+
+
+### var_dump
+
+```php
+var_dump($variable);
+```
