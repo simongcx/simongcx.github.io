@@ -27,6 +27,8 @@ DefaultValue = "hello world!";
 Caption = "hello world!";
 ReadOnly = true;
 Hidden = true;
+AllowBlack = true;
+DefaultType = 6; // sets the field value to the current date / time
 
 // Get information from the context of the record being accessed
 var id = eWare.getContextInfo("Opportunity", "Oppo_referencenumber");
