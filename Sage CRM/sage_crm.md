@@ -129,7 +129,14 @@ http://slidegur.com/doc/204126/the-values-----sage-crm-community
 
 
 
+## Miscellaneous
 
+### Places where fields can be set to be required
+
+* In the CreateScript of a screen (applies only to that screen)
+* In the Field Security page of the field (applies everywhere)
+* At the database layer (sys.columns is_nullable)
+* In the custom_edits table, ColP_Required column (is this the same as the Field Security page?)
 
 
 
