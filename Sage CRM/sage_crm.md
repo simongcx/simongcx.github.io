@@ -137,6 +137,7 @@ http://slidegur.com/doc/204126/the-values-----sage-crm-community
 * In the Field Security page of the field (applies everywhere)
 * At the database layer (sys.columns is_nullable)
 * In the custom_edits table, ColP_Required column (is this the same as the Field Security page?)
+* In the CreateScript of a Display Field for Amendment action of a workflow rule
 
 
 
