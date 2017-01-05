@@ -134,9 +134,9 @@ http://slidegur.com/doc/204126/the-values-----sage-crm-community
 ### Places where fields can be set to be required
 
 * In the CreateScript of a screen (applies only to that screen)
-* In the Field Security page of the field (applies everywhere)
-* At the database layer (sys.columns is_nullable)
-* In the custom_edits table, ColP_Required column (is this the same as the Field Security page?)
+* In the Field Security page of the field (applies only to that user/team/profile group)
+* At the database layer (sys.columns is_nullable) (not sure if this is a good idea)
+* In the custom_edits table, ColP_Required column (not sure how to edit this via the UI)
 * In the CreateScript of a Display Field for Amendment action of a workflow rule
 
 
