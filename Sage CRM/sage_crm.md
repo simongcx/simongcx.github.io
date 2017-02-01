@@ -126,6 +126,32 @@ https://community.sagecrm.com/user_community/f/84/t/10042.aspx
 https://community.sagecrm.com/user_community/f/84/p/5372/13115.aspx
 http://slidegur.com/doc/204126/the-values-----sage-crm-community
 
+# Dashboards
+
+## Creating a new template dashboard
+1. Go to the dashboards tab
+2. Click *New Dashboard* > *Create Dashboard*
+3. Enter a *Name* (and *Description* if required)
+4. Select a *Gadget Template* if required, or click the cross in the top right hand corner
+5. Add gadgets as required
+6. Click *Templates* > *Dashboard Templates*
+7. Click the *User* radio button
+8. Find and select the dashboard under your user name
+9. Click *Clone*
+10. Rename and categorise as required
+11. Assign users as required
+
+##Editing a template dashboard
+1. Go to the dashboards tab
+2. Click *Templates* > *Dashboard Templates*
+3. Select the template
+4. Click *Modify Gadgets*
+
+## Using custom reports
+
+Unfortunately "Data sources from cross-tabular or historical type reports are not included in List or Chart gadget report data sources". This means that you have to use reports based on System Views (e.g. Opportunity View, etc)
+
+http://help.sagecrm.com/on_premise/en/7.3SP1/user/Content/User/IB_AddingNewDataSources.htm
 
 
 
