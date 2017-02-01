@@ -149,6 +149,8 @@ http://slidegur.com/doc/204126/the-values-----sage-crm-community
 
 ## Using custom reports
 
+* Make sure your report has a title
+
 Unfortunately "Data sources from cross-tabular or historical type reports are not included in List or Chart gadget report data sources". This means that you have to use reports based on System Views (e.g. Opportunity View, etc)
 
 http://help.sagecrm.com/on_premise/en/7.3SP1/user/Content/User/IB_AddingNewDataSources.htm
