@@ -108,6 +108,12 @@ Called ListObjects in VBA.
 ```
 The `@` symbol is used to reference cells in the same row.
 The inner square brackets are required because there is a space in the column name.
+```
+=SUM(Data[Amount])
+```
+Sums the *Amount* column from the table called *Data*.
+
+https://support.office.com/en-gb/article/Using-structured-references-with-Excel-tables-f5ed2452-2337-4f71-bed3-c8ae6d2b276e
 
 # Tips and tricks
 
