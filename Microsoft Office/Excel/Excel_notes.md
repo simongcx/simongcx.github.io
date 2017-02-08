@@ -113,6 +113,14 @@ The inner square brackets are required because there is a space in the column na
 ```
 Sums the *Amount* column from the table called *Data*.
 
+
+To make an absolute reference to a column in a structured reference, make it reference a range of columns:
+```
+SUM(Data[[Amount]:[Amount]])
+```
+Note that absolute references aren't required for copying/pasting, but are required for a drag across.
+
+
 https://support.office.com/en-gb/article/Using-structured-references-with-Excel-tables-f5ed2452-2337-4f71-bed3-c8ae6d2b276e
 
 # Tips and tricks
