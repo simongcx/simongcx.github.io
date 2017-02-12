@@ -4,8 +4,9 @@
 * Consistent formulae all the way down a column
 * No subtotals
 * No blank rows
-* No columns
+* No blank columns
 * Use Tables
-* Don't formula-link files that aren't in the same folder
+* Don't formula-link files
+* It is better to reference something by name, than by cell reference / position
 
 Basically, make it as much like a database as possible.
