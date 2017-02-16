@@ -8,5 +8,6 @@
 * Use Tables
 * Don't formula-link files
 * It is better to reference something by name, than by cell reference / position
+* It is better to have a single spreadsheet on a topic than one per month, or one per year
 
 Basically, make it as much like a database as possible.
