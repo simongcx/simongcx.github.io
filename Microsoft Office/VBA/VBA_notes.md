@@ -187,6 +187,7 @@ Set WinHttpReq = CreateObject("WinHttp.WinHttpRequest.5.1")
 Set regEx = CreateObject("VBScript.RegExp")
 Set oXLApp = CreateObject("Excel.Application")
 Set OApp = CreateObject("Outlook.Application")
+Set sh = CreateObject("WScript.Shell")
 ```
 
 # Thoughts on VBA distribution
