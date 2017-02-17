@@ -167,6 +167,28 @@ Skip           |              9
 
 It is worth noting that this does not result in errors in the event that a *Date* data type is applied to a column that does not contain date values.
 
+# Early binding vs late binding (CreateObject)
+
+Late binding
+```
+Set fs = CreateObject("Scripting.FileSystemObject")
+```
+Early binding
+```
+Dim fs As New Scripting.FileSystemObject
+```
+
+
+Other late binding examples
+```
+Set Word = Application.CreateObject("Word.Application")
+Set Web = CreateObject("InternetExplorer.Application")
+Set WinHttpReq = CreateObject("WinHttp.WinHttpRequest.5.1")
+Set regEx = CreateObject("VBScript.RegExp")
+Set oXLApp = CreateObject("Excel.Application")
+Set OApp = CreateObject("Outlook.Application")
+```
+
 # Thoughts on VBA distribution
 * Microsoft Office would benefit from some kind of package manager or app store where users can sell (or make freely available) addins for Microsoft Office products. The benefits of such a system would be:
 	* A single place for users to obtain additional functionality
