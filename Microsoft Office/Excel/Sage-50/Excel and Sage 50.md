@@ -1,5 +1,7 @@
 
+## Errors
 
+### Specified driver could not be loaded due to system error 8
 
 After using the Sage 50 v21 ODBC driver in Excel for a while, it is quite common for the following error to be displayed *Specified driver could not be loaded due to system error 8: Not enough storage is available to process this command. (Sage Line 50 v21, C:\SysWOW64\S21DBC32.dll).*
 
@@ -7,11 +9,13 @@ After using the Sage 50 v21 ODBC driver in Excel for a while, it is quite common
 
 
 
-## Syntax Error: Invalid Group Specification
+### Syntax Error: Invalid Group Specification
 
 Occurs if the *WHERE* clause is after the *GROUP BY* clause
 
-## Date queries
+## SQL syntax
+
+### Date queries
 ```sql
 SELECT *
 FROM AUDIT_JOURNAL
