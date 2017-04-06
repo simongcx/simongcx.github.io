@@ -29,26 +29,26 @@ WHERE DATE > '2016-02-02'
 
 ### Importing to Access
 
-Click on the *External Data* ribbon
-Click *ODBC Database*
-Select *Import the source data into a new table in the current database*
-Click *OK*
-Select the *Machine Data Source* tab
-Click *New*
-Select *User Data Source (Applies to this machine only)*
-Click *Next*
-Select *Sage Line 50 v21*
-Click *Finish*
-Enter the *Data Source Name*
-Enter the *Data Path*
-Click *OK*
-Click *OK*
-Enter the *User ID*
-Enter the *Password*
-Click *OK*
-Click *Select All*
-Click *OK*
-Wait for it to process
-Select *Save import steps*
-Enter *Save as*
-Click *Save import*
+* Click on the *External Data* ribbon
+* Click *ODBC Database*
+* Select *Import the source data into a new table in the current database*
+* Click *OK*
+* Select the *Machine Data Source* tab
+* Click *New*
+* Select *User Data Source (Applies to this machine only)*
+* Click *Next*
+* Select *Sage Line 50 v21*
+* Click *Finish*
+* Enter the *Data Source Name*
+* Enter the *Data Path*
+* Click *OK*
+* Click *OK*
+* Enter the *User ID*
+* Enter the *Password*
+* Click *OK*
+* Click *Select All*
+* Click *OK*
+* Wait for it to process
+* Select *Save import steps*
+* Enter *Save as*
+* Click *Save import*
