@@ -7,6 +7,22 @@ After using the Sage 50 v21 ODBC driver in Excel for a while, it is quite common
 
 
 
+##Syntax Error: Invalid Group Specification
+
+Occurs if the *WHERE* clause is after the *GROUP BY* clause
+
+##Date queries
+```sql
+SELECT *
+FROM AUDIT_JOURNAL
+WHERE (AUDIT_JOURNAL.DATE>{d '2016-09-30'})
+```
+```sql
+SELECT *
+FROM AUDIT_JOURNAL
+WHERE DATE > '2016-02-02'
+```
+
 ###Importing to Access###
 
 Click on the *External Data* ribbon
