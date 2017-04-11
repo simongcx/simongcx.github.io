@@ -23,3 +23,6 @@
   * Right click on the file in Windows Explorer
   * Click *Properties*
   * Click *Unblock*
+
+
+Source: https://www.excelcampus.com/tools/how-to-install-an-excel-add-in-guide/
