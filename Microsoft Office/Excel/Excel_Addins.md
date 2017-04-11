@@ -13,7 +13,7 @@
 ## Troubleshooting installation
 
 * Digitally sign the macro
-  * Create certificate using SelfCert.exe (you'll probably need to Google this)
+  * Create certificate using SelfCert.exe (you'll probably need to Google this) (e.g. https://www.howto-outlook.com/howto/selfcert.htm)
   * In the Visual Basic Editor (Alt + F11), click Tools > Digital Signature
 * Set the Trust Center settings
 	* File > Options > Trust Center > Trust Center Settings... > Macro Settings
