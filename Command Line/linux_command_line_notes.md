@@ -26,22 +26,22 @@ x11vnc -gui tray
 ```
 
 # Redirection
-Redirection operator | Description
----------------------|------------
-`>` | Writes the command output to a file or a device, such as a printer, instead of the Command Prompt window.
-`<` | Reads the command input from a file, instead of reading input from the keyboard.
-`>>` | Appends the command output to the end of a file without deleting the information that is already in the file.
-`>&` | Writes the output from one handle to the input of another handle.
-`<&` | Reads the input from one handle and writes it to the output of another handle.
-&#124; | Reads the output from one command and writes it to the input of another command. Also known as a pipe.
+| Redirection operator | Description                              |
+| -------------------- | ---------------------------------------- |
+| `>`                  | Writes the command output to a file or a device, such as a printer, instead of the Command Prompt window. |
+| `<`                  | Reads the command input from a file, instead of reading input from the keyboard. |
+| `>>`                 | Appends the command output to the end of a file without deleting the information that is already in the file. |
+| `>&`                 | Writes the output from one handle to the input of another handle. |
+| `<&`                 | Reads the input from one handle and writes it to the output of another handle. |
+| &#124;               | Reads the output from one command and writes it to the input of another command. Also known as a pipe. |
 
 
 
-Handle | Numeric equivalent of handle | Description
--------|------------------------------|------------
-STDIN | 0 | Keyboard input
-STDOUT | 1 | Output to the Command Prompt window
-STDERR | 2 | Error output to the Command Prompt window
+| Handle | Numeric equivalent of handle | Description                              |
+| ------ | ---------------------------- | ---------------------------------------- |
+| STDIN  | 0                            | Keyboard input                           |
+| STDOUT | 1                            | Output to the Command Prompt window      |
+| STDERR | 2                            | Error output to the Command Prompt window |
 
 ```
 echo test > myfile.txt
@@ -60,3 +60,13 @@ The command `echo test` writes "test" to stdout. The `>` redirects this to myfil
 ps ax -l -u simon
 ps x -l -u simon
 ```
+# Shutting down, rebooting and ACPI states
+
+`rtcwake` - can be used to put the computer into standby or turn off, with a wake timer
+
+`pm-suspend`
+
+`shutdown`
+
+
+
