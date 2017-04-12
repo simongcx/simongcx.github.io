@@ -102,7 +102,7 @@ Notes:
 
 After using the Sage 50 v21 ODBC driver in Excel for a while, it is quite common for the following error to be displayed *Specified driver could not be loaded due to system error 8: Not enough storage is available to process this command. (Sage Line 50 v21, C:\SysWOW64\S21DBC32.dll).*
 
-![Specified driver could not be loaded due to system error 8](Specified_driver_could_not_be_loaded_due_to_system_error_8.png)
+![Specified driver could not be loaded due to system error 8](Specified_driver_could_not_be_loaded_due_to_system_error_8.PNG)
 
 ### Syntax Error: Invalid Group Specification
 
