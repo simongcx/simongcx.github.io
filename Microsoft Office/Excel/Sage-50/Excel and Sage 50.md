@@ -218,3 +218,10 @@ Occurs if the *WHERE* clause is after the *GROUP BY* clause
 | VAT_REV_CHARGE_HEADER              |                                                                    |
 | VAT_REV_CHARGE_RETURN              |                                                                    |
 | VAT_SUMMARY                        |                                                                    |
+
+### AUDIT_SPLIT
+Records the split of a transaction into multiple lines. A *JC* or *JD* will have a one-to-one relationship between *HEADER_NUMBER* and *SPLIT_NUMBER*
+
+### AUDIT_USAGE
+Records allocations, such as the allocation of a payment to an invoice. The allocation is at *SPLIT_NUMBER* level. Each record in the *AUDIT_USAGE* table matches a *SPLIT_NUMBER* to a *SPLIT_CROSSREF*. Both directions are stored in the table, so for example where a *PP* is allocated to a *PI*, there is a record in the *AUDIT_USAGE* table where there split number of the *PP* is in the SPLIT_NUMBER field and the split number of the *PI* is in the *SPLIT_CROSSREF* field, and there is a record where the split number of the *PI* is in the *SPLIT_NUMBER* field and the split number of the PP is in the *SPLIT_CROSSREF* field
+
