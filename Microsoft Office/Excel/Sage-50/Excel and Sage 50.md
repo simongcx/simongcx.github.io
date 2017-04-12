@@ -83,13 +83,12 @@ Sub CreateSage50Connection()
         .PreserveColumnInfo = True
         .Refresh BackgroundQuery:=False
     End With
-
 End Sub
 ```
 
 Notes:
 * Make sure the version number of the driver is correct in the connection string
-* The data path should be something like: <yourinstallationdirectory>\Sage\Accounts\2015\Company.000\ACCDATA
+* The data path should be something like: `<yourinstallationdirectory>\Sage\Accounts\2015\Company.000\ACCDATA`
 
 ## Peculiarities
 
