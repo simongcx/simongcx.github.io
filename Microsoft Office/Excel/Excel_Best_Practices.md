@@ -2,15 +2,16 @@
 * Row order shouldn't matter
 * Column order shouldn't matter (i.e. moving a column position should not break the spreadsheet)
 * Consistent formulae all the way down a column
-* No subtotals - use pivot tables / sumif tables in another worksheet
+* No subtotals - use pivot tables / sumif tables in another worksheet if totals are required
 * No blank rows
 * No blank columns
-* Use Tables
+* Use Tables as much as possible
 * Don't formula-link files
 * It is better to reference something by name, than by cell reference / position
 * It is better to have a single spreadsheet on a topic than one per month, or one per year
 * Have a single header row
 * Have the header row in row 1, if there is additional metadata, have this in a separate tab
+* Don't separate similar data across multiple tabs
 
 Basically, make it as much like a database as possible.
 
