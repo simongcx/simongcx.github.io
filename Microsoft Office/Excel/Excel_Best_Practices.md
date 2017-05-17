@@ -14,7 +14,7 @@
 
 Basically, make it as much like a database as possible.
 
-##Adding calculated columns to hard-coded source data
+## Adding calculated columns to hard-coded source data
 
 It is a common task to import some data into Excel (perhaps from a CSV output of a system) and then add columns to that data with additional calculations (e.g. vlookups to a mapping table to categorise the data). Often the spreadsheet will be re-used with new batches of the source data. In this scenario there are a few points of good practice:
 
