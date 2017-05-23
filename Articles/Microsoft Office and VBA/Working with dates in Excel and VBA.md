@@ -35,7 +35,7 @@ To take an integer and return a nicely formatted date in Excel, use `TEXT` as fo
 
 Note that Excel and VBA's date serials differ before 01/03/1900. The Excel date format incorrectly includes 29/02/1900 (assuming 1900 was a leap year), whereas VBA correctly does not. However, to keep the two lined up from 01/03/1900, the VBA serial starts on 31/12/1899.
 
-Excel: `=TEXT(1`,"dd/mm/yyyy")` returns 01/01/1900
+Excel: `=TEXT(1,"dd/mm/yyyy")` returns 01/01/1900
 VBA: `CDate(1)` returns 31/12/1899
 
 If you want to check, run this VBA code in Excel:
