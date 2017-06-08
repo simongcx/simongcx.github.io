@@ -188,6 +188,7 @@ Set regEx = CreateObject("VBScript.RegExp")
 Set oXLApp = CreateObject("Excel.Application")
 Set OApp = CreateObject("Outlook.Application")
 Set sh = CreateObject("WScript.Shell")
+Set objData = CreateObject("New:{1C3B4210-F441-11CE-B9EA-00AA006B1A69}") ' late binding version of Dim objData As New MSForms.DataObject
 ```
 
 # Thoughts on VBA distribution
