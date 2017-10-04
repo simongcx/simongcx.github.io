@@ -199,6 +199,29 @@ Set objData = CreateObject("New:{1C3B4210-F441-11CE-B9EA-00AA006B1A69}") ' late 
 	* Easy setup of the users environment (ideally a single-click deploy of all add-on previously used to a fresh Office install)
 * The absence of a package manager means that each Office document with VBA ends up including all the code it needs to run, rather than *requiring* other modules which are then auto-installed by the package manager
 
+# Running python script from VBA
+## Wait for script to terminate 
+
+```
+Dim wsh As Object
+Set wsh = VBA.CreateObject("WScript.Shell")
+Dim waitOnReturn As Boolean: waitOnReturn = True
+Dim windowStyle As Integer: windowStyle = 1
+
+commandtorun = "cmd.exe /C python ""C:\Users\Joe Bloggs\MyAwesomeScript.py"" "
+
+wsh.Run commandtorun, windowStyle, waitOnReturn
+```
+Note that is Python is not in the Windows PATH, then the full path to the python executable is required. Double inverted commas are used around the file path as file paths in Windows commonly contain spaces.
+
+## Without waiting for the script to terminate
+
+```
+retval = Shell("python ""C:\Users\Joe Bloggs\MyAwesomeScript.py"" ")
+
+Debug.Print retval
+```
+
 # Miscellaneous
 ## Running in the background
 A VBA procedure will take focus until it's complete, with the exception of displaying a modeless user form, input box, or some other method of queuing user interaction. But those are all initiated by a VBA procedure, and it will continue once they're answered/dismissed.
