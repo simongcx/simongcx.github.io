@@ -212,7 +212,7 @@ commandtorun = "cmd.exe /C python ""C:\Users\Joe Bloggs\MyAwesomeScript.py"" "
 
 wsh.Run commandtorun, windowStyle, waitOnReturn
 ```
-Note that is Python is not in the Windows PATH, then the full path to the python executable is required. Double inverted commas are used around the file path as file paths in Windows commonly contain spaces.
+Note that if Python is not in the Windows PATH, then the full path to the python executable is required. Double inverted commas are used around the file path as file paths in Windows commonly contain spaces.
 
 ## Without waiting for the script to terminate
 
