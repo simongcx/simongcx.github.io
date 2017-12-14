@@ -41,7 +41,18 @@ The reason is that Cells defaults to being of the active worksheet. Hence the fo
 myrange = Worksheets("Sheet1").Range(Worksheets("Sheet1").Cells(1, 2), Worksheets("Sheet1").Cells(10, 2))
 ```
 Source: http://stackoverflow.com/questions/28170078/how-do-i-refer-to-a-range-in-another-worksheet-in-my-code
-##Switching between addresses and row/column numbers
+
+One way to fix this would be with a wrapper function, like this:
+```
+Function GetValue(sheetobj, row, column)
+
+GetValue = sheetobj.Range(sheetobj.Cells(row, column), sheetobj.Cells(row, column)).Value
+
+End Function
+```
+That way, you only need to write the sheet reference once (not three times) and the row and column once each (rather than two times each).
+
+## Switching between addresses and row/column numbers
 Getting the address of a single cell specified by row/column numbers:
 ```vbnet
 MsgBox Cells(1, 1).Address(RowAbsolute:=False, ColumnAbsolute:=False)
