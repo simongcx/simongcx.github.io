@@ -3,9 +3,11 @@
 In the 1930s Alan Turing developed the model to solve a famous problem posed by David Hilbert in 1928.
 The problem, known as the Entscheidungsproblem (German for “decision problem”) asked for an algorithm that could determine the truth or falsehood of a mathematical statement. To solve the problem, Turing first needed a formal model of an algorithm. For this, he invented the machine model that is now known as a Turing machine and defined an algorithm as any Turing Machine that is guaranteed to eventually halt on any input.
 With the model, Turing was able to show that any machine could be simulated by a universal machine with a few very simple operations. The operations he used can be viewed as equivalent to
+
 * being able to define and use procedures
 * being able to make decisions using if
 * being able to do simple arithmetic and comparisons
+
 Turing also proved that there are some problems that cannot be solved by any algorithm. The most famous example of which is that it is impossible for a program to determine in general if another program will run forever or eventually finish executing.
 
 Source: adapted from David Evans, Introduction to Computing: Explorations in Language, Logic, and Machines, available free from http://www.computingbook.org.
