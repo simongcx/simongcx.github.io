@@ -69,4 +69,20 @@ ps x -l -u simon
 `shutdown`
 
 
+# Screen
+
+Starting
+- Start a new screen with the `screen`
+- Start the process
+- Press Ctrl+A and Ctrl+D to *detach* the screen session
+- You can now close your SSH connection
+
+Resuming
+- `screen -r` resumes a screen, requires the pid if there's more than one
+
+Killing
+- Attach to / resume a screen, then stop the process with Ctrl+C then type `exit` at the prompt
+OR
+- Without resuming the screen `screen -X -S [session # you want to kill] quit`
+
 
