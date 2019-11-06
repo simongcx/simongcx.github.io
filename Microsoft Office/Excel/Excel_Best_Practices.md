@@ -12,6 +12,7 @@
 * Have a single header row
 * Have the header row in row 1, if there is additional metadata, have this in a separate tab
 * Don't separate similar data across multiple tabs
+* Expunge trailing spaces
 
 Basically, make it as much like a database as possible.
 
